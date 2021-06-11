@@ -1,0 +1,14 @@
+$primary-color: #333;
+
+body {
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #000000 0%, #ffffff 100%);
+}
+
+.grid {
+  display: grid;
+}

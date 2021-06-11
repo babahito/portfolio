@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.photos {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.photos__item {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  @include mq() {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.photos__more{
+  text-align: center;
+  margin-top: 60px;
+}

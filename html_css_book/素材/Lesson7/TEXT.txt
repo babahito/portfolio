@@ -1,0 +1,19 @@
+(title)
+Photo Gallery
+
+(h1)
+Photo Gallery
+
+(img/img_main.jpgのalt属性)
+蔵王山の火口
+
+(<ul class="photosNav__list">)
+ALL
+Flower
+Sky
+Forest
+Sea
+Mountain
+
+(footer)
+© MdN corporation

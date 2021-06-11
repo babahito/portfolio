@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+//@include font-webfont_Lato;
+@mixin font-webfont_Lato {
+  font-family: "Lato", sans-serif;
+}
+//@include font-EN_Quintessential;
+@mixin font-EN_Quintessential {
+  font-family: "Quintessential", cursive;
+}
+//@include font-JP_sans;
+@mixin font-JP_sans {
+  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+}
+//@include fz();
+@mixin fz($size, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) + rem;
+}

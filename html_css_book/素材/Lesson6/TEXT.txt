@@ -1,0 +1,118 @@
+※最終的な完成形HTMLのテキストのうち、上から順に用意しています。
+
+(title)
+東京サファリパーク
+
+(meta:description)
+東京サファリパークは、都内のどこかにある広大なサファリパークです。
+
+
+(h1 imgのalt属性)
+東京サファリパーク
+
+(button title属性)
+メニュー開閉
+
+
+(ul class="header-gnav-list")
+pets
+動物紹介
+
+explore
+パークガイド
+
+confirmation_number
+料金・チケット
+
+commute
+交通アクセス
+
+
+(div class="swiper-slider_01" imgのalt属性)
+ライオンのオス2頭
+
+フラミンゴの群れ
+
+どんぐりをほおばるリス
+
+
+(h2 class="heading-lv1")
+feedback
+イベント情報
+Events
+
+(ul class="events-list")
+
+(imgのalt属性)
+サファリカー
+
+(div class="events-info")
+サファリバスツアー
+野生の動物をたくさん見られる、大迫力の全面金網バスで敷地内をぐるっと1周！
+
+(imgのalt属性)
+牧場広場の羊
+
+(div class="events-info")
+牧場広場で酪農体験
+併設の牧場で乳搾り体験ができます。牛や羊と触れ合える広場です。
+
+(imgのalt属性)
+餌やりの様子
+
+(div class="events-info")
+餌やり体験ツアー
+飼育員と一緒に餌やり体験ができるツアーです。間近で動物を観察してみましょう。
+
+(a class="btn-more")
+もっと見る
+navigate_next
+
+
+(h2 class="heading-lv1")
+fiber_new
+新着情報
+News
+
+(ul class="news-list")
+2020年5月24日
+トラの赤ちゃんが生まれました！
+
+2020年5月20日
+東京サファリパークのテレビ放送のお知らせ
+
+2020年5月18日
+営業時間変更に関するお知らせ
+
+2020年5月10日
+インスタグラム、はじめました！
+
+2020年4月24日
+ホームページをリニューアルしました！
+
+(a class="btn-more")
+もっと見る
+navigate_next
+
+
+(h2 class="heading-lv1")
+pets
+動物紹介
+Animals
+
+(div class="swiper-slider_02" imgのalt属性)
+きつね
+
+レッサーパンダ
+
+きりん
+
+リャマ
+
+(a class="btn-more")
+もっと見る
+navigate_next
+
+
+(footer)
+&copy; MdN corporation

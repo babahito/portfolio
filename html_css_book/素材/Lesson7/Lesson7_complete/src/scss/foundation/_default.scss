@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: $fontFamily;
+  color: $textColor;
+  line-height: 1.5;
+  background: $bgColor;
+}
+
+a {
+  color: $textColor;
+  text-decoration: none;
+}

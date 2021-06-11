@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  height: 60px;
+  position: fixed;
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gnav {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

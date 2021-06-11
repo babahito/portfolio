@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="jaS">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <img src="images/logo_header.png" alt="コアワーキングスペース">
+            </h1>
+            <div class="header__humbegar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="gnav">
+                <ul class="gnav__list">
+                    <li class="gnav__item"><a href="">サービス<span class="gnav__item--subtext">Service</span></a></li>
+                    <li class="gnav__item"><a href="">料金プラン<span class="gnav__item--subtext">Price</span></a></li>
+                    <li class="gnav__item"><a href="">アクセス<span class="gnav__item--subtext">Access</span></a></li>
+                    <li class="gnav__item"><a href="">お問い合わせ<span class="gnav__item--subtext">Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <!-- メインイメージ -->
+        <div class="mainImg">
+            <picture class="mainImg__picture">
+                <source media="(max-width: 767px)" srcset="images/ph_mv_sp.png">
+                    <img src="images/ph_mv_pc.png" alt="">
+            </picture>
+            <p class="mainImg__text">神保町駅徒歩3分の<br class="sp_only">
+                駅チカに、<br>
+                24h OPEN<span class="text_ast">※</span>の<br class="sp_only">
+                コワーキングスペース誕生!!
+
+            </p>
+            <p class="mainImg__text--sub">※マスタープラン会員のみ</p>
+        </div>
+        <div class="container">
+            <!-- メインテキスト -->
+            <section class="intro">
+                <h2 class="intro__heading2">2021年8月OPEN</h2>
+                <p class="intro__text">
+                    東京メトロ「神保町駅」から徒歩3分の駅チカに、<br class="pc_only">
+                    コワーキングスペース「Co-Work MdN」が誕生しました。<br>
+                    24時間利用可のマスタープラン・平日デイタイムプラン・ナイト＆週末プランなど<br class="pc_only">
+                    豊富な月極プランの他、<br class="pc_only">
+                    会員登録なしで気軽に立ち寄れるドロップインも可能。<br>
+                    お気軽にお立ち寄り・お問い合わせください！
+                </p>
+                <figure class="intro__img">
+                    <img src="images/ph_image01.jpg" alt="">
+                    <img src="images/ph_image02.jpg" alt="">
+                    <img src="images/ph_image03.jpg" alt="">
+                    <img src="images/ph_image04.jpg" alt="">
+                </figure>
+            </section>
+
+            <!-- サービス -->
+            <section class="service section_box">
+                <header class="heading_lev2">
+                    <h2 class="heading_lev2_text">サービス<span class="service__heading2--sub">Service</span></h2>
+                </header>
+                <div class="service__box">
+                    <ul class="service__list">
+                        <li class="service__item"><a href="">神保町駅徒歩3分</a></li>
+                        <li class="service__item"><a href="">高速WiFi完備</a></li>
+                        <li class="service__item"><a href="">全席電源完備</a></li>
+                        <li class="service__item"><a href="">モニタ・マウス等備品貸出有</a></li>
+                        <li class="service__item"><a href="">防音電話ブース・会議室有<span class="text_ast">（※予約制）</span></a></li>
+                        <li class="service__item"><a href="">24時間利用可<span class="text_ast">（※マスタープランのみ）</span></a></li>
+                        <li class="service__item"><a href="">本格ドリンクバー完備</a></li>
+                        <li class="service__item"><a href="">飲食物持ち込みOK</a></li>
+                    </ul>
+                </div>
+                <!-- ボタン -->
+                <a  class="btn_common" href="">サービス詳細はこちら</a>
+            </section>
+            <!-- 料金プラン -->
+            <section class="preice section_box">
+                <header class="heading_lev2">
+                    <h2 class="heading_lev2_text">料金プラン<span class="service__heading2--sub">Price</span></h2>
+                </header>
+                <div class="section__inner">
+                <!-- マネープラン -->
+                <section class="price-sub">
+                    <img src="images/ico_plan_master.svg.png" alt="">
+                    <h3 class="price-sub__heading3">マネープラン</h3>
+                    <dl class="price-sub__list">
+                        <dt class="price-sub__ttl">利用時間</dt>
+                        <dd class="price-sub__text">マスタープラン</dd>
+                        <dt class="price-sub__ttl">月額料金</dt>
+                        <dd class="price-sub__text">30,000（税込）</dd>
+                    </dl>
+                </section>   
+                <!--平日デイタイム -->
+                <section class="price-sub">
+                    <img src="images/ico_plan_day.svg.png" alt="">
+                    <h3 class="price-sub__heading3">平日デイタイム<br>プラン</h3>
+                    <dl class="price-sub__list">
+                        <dt class="price-sub__ttl">利用時間</dt>
+                        <dd class="price-sub__text">マスタープラン</dd>
+                        <dt class="price-sub__ttl">月額料金</dt>
+                        <dd class="price-sub__text">30,000（税込）</dd>
+                    </dl>
+                </section>   
+                <!-- 平日ナイトタイム -->
+                <section class="price-sub">
+                    <img src="images/ico_plan_night.svg.png" alt="">
+                    <h3 class="price-sub__heading3">平日ナイトタイム<br>&週末プラン</h3>
+                    <dl class="price-sub__list">
+                        <dt class="price-sub__ttl">利用時間</dt>
+                        <dd class="price-sub__text">マスタープラン</dd>
+                        <dt class="price-sub__ttl">月額料金</dt>
+                        <dd class="price-sub__text">30,000（税込）</dd>
+                    </dl>
+                </section>       
+                <!-- ドロップイン -->
+                <section class="price-sub">
+                    <img src="images/ico_plan_dropin.svg.png" alt="">
+                    <h3 class="price-sub__heading3">ドロップイン</h3>
+                    <dl class="price-sub__list">
+                        <dt class="price-sub__ttl">利用時間</dt>
+                        <dd class="price-sub__text">マスタープラン</dd>
+                        <dt class="price-sub__ttl">月額料金</dt>
+                        <dd class="price-sub__text">30,000（税込）</dd>
+                    </dl>
+                </section> 
+                </div> 
+                <!-- ボタン -->
+                <a  class="btn_common" href="">料金プランはこちら</a> 
+            </section>
+            <!-- アクセス -->
+            <section class="access section_box">
+                <header class="heading_lev2">
+                    <h2 class="heading_lev2_text">アクセス<span class="service__heading2--sub">Access</span></h2>
+                </header>
+                <ul class="access__Item">
+                    <li><span class="address_code">〒101-0051</span>東京都千代田区神田神保町1-105</li>
+                    <li>都営新宿線・三田線、東京メトロ 半蔵門線「神保町駅」A9出口より徒歩3分</li>
+                    <li>東京メトロ 東西線「竹橋駅」3b出口より徒歩6分</li>
+                </ul>
+                <!-- ボタン -->
+                <a  class="btn_common" href="">アクセス詳細はこちら</a> 
+            </section>
+            <!--アクセス -->
+            <section class="contact section_box">
+                <header class="heading_lev2">
+                    <h2 class="heading_lev2_text">お問い合わせ<span class="service__heading2--sub">Contact</span></h2>
+                </header>
+                <div class="contact__box">
+                    <div class="contact__info">
+                        <p class="contact__tel">03-0000-0000</p>
+                        <p class="contact__time">平日：10:00〜22:00／土日祝：10:00〜18:00</p>
+                    </div>
+                    <!-- ボタン -->
+                    <div class="contact_box">
+                        <a  class="btn_common" href="">お問合わフォーム</a> 
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer__info">
+            <div class="footer_right">
+                <p class="footer__heading1"><img src="images/logo_footer.svg.png" alt=""></p>
+                <p class="footer__address">
+                    〒101-0051<br>
+                    東京都千代田区神田神保町1-105<br>
+                    03-0000-0000
+                </p>
+                <ul class="footer__snslist">
+                    <li class="footer__snsitem"><a href=""><img src="images/ico_twitter.svg.png" alt=""></a></li>
+                    <li class="footer__snsitem"><a href=""><img src="images/ico_facebook.svg.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="footer__cent">
+                <ul class="footer__centItem">
+                    <li class="footer__centList"><a href="">サービス</a></li>
+                    <li class="footer__centList"><a href="">料金プラン</a></li>
+                    <li class="footer__centList"><a href="">アクセス</a></li>
+                    <li class="footer__centList"><a href="">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer__left">
+                <ul class="footer__leftItem">
+                    <li class="footer__leftList"><a href="">採用情報</a></li>
+                    <li class="footer__leftList"><a href="">運営会社</a></li>
+                    <li class="footer__leftList"><a href="">サイトポリシー</a></li>
+                    <li class="footer__leftList"><a href="">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- コピーライト -->
+        <div class="copyright">
+            <p>© 2020 Co-Work MdN. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

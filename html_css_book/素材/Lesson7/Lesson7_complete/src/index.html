@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photo Gallery</title>
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel=”dns-prefetch” href=”//unpkg.com”>
+  <link rel=”dns-prefetch” href=”//cdn.jsdelivr.net”>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-image-lightbox@7.1.0/dist/vue-image-lightbox.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1 class="logo">Photo Gallery</h1>
+    <div class="header__bg">
+      <img src="img/img_main.jpg" alt="蔵王山の火口">
+    </div>
+  </header>
+  <main id="main" class="main">
+    <nav class="photosNav">
+      <ul class="photosNav__list">
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('all')" :class="{'is-active': filter === 'all'}" class="photosNav__button">ALL</button>
+        </li>
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('flower')" :class="{'is-active': filter === 'flower'}" class="photosNav__button">Flower</button>
+        </li>
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('sky')" :class="{'is-active': filter === 'sky'}" class="photosNav__button">Sky</button>
+        </li>
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('forest')" :class="{'is-active': filter === 'forest'}" class="photosNav__button">Forest</button>
+        </li>
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('sea')" :class="{'is-active': filter === 'sea'}" class="photosNav__button">Sea</button>
+        </li>
+        <li class="photosNav__item">
+          <button type="button" @click="updateFilter('mountain')" :class="{'is-active': filter === 'mountain'}" class="photosNav__button">Mountain</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="photos">
+      <div class="photos__list">
+        <masonry :cols="{default: 3, 768: 1}" :gutter="30">
+          <div class="photos__item" class="photos__item" v-for="(photo, index) in filteredPhotos" :key="photo.id">
+            <div class="photo">
+              <button type="button" class="photo__button" @click="openPhoto(photo.id)">
+                <figure class="photo__thumb">
+                  <img :src="photo.thumb" alt="photo.title">
+                </figure>
+              </button>
+            </div>
+          </div>
+        </masonry>
+      </div>
+      <div class="photos__show">
+        <light-box ref="lightbox" :media="filteredPhotos" :show-light-box="false" :show-thumbs="false"></light-box>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="copyright"><small>© MdN corporation</small></p>
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-masonry-css"></script>
+<script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-image-lightbox@7.1.0/dist/vue-image-lightbox.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>

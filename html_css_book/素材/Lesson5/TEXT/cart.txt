@@ -1,0 +1,100 @@
+（タイトル）
+About Flower オンラインショップ
+
+（ヘッダー）
+（サイトロゴ：SVG）
+
+（ナビゲーション）
+Home
+Online Shop
+News
+Store
+Access
+About
+Cart
+
+（パンくずリスト）
+現在のページ
+HOME
+ONLINE SHOP
+CART
+
+（メイン）
+（見出し）
+CART
+
+（商品1）
+img/card/flower02.jpg
+サムネイル画像：パープル系ドライフラワー
+（見出し）
+パープル系ドライフラワー
+（価格）
+¥3,800
+
+（商品2）
+img/card/flower05.jpg
+サムネイル画像：スタッフ おまかせアレンジ
+（見出し）
+スタッフ おまかせアレンジ
+（価格）
+¥3,800
+
+（商品3）
+img/card/flower01.jpg
+サムネイル画像：ひまわりのアレンジ花束
+（見出し）
+ひまわりのアレンジ花束
+（価格）
+¥3,800
+
+（リスト）
+送料	¥500
+合計	¥11,900
+
+（セクション：ログイン）
+（見出し）
+MEMBER LOGIN
+
+（フォーム）
+会員ID/メールアドレス
+パスワード
+（ボタン）
+ログインして購入する
+（リンク）
+新規会員登録して購入する
+
+（メイン：ここまで）
+
+（パンくずリスト）
+現在のページ
+HOME
+ONLINE SHOP
+CART
+
+（フッター）
+（フッターナビゲーション）
+（グループ1）
+Online Shop
+（リスト）
+Category
+Category
+Category
+
+（グループ2）
+News
+（リスト）
+Info
+Event
+Media
+
+（グループ3）
+Store
+（リスト）
+About
+Access
+Contact
+
+（コピーライト）
+&copy; company name
+
+（フッター：ここまで）

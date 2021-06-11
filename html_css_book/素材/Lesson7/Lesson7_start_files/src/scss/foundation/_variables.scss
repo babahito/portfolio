@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// font-family
+$fontFamily : 'Inter', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+
+// color
+$textColor: #ffffff;
+$bgColor: #111111;
+$borderColor: #333333;
+
+$breakpoints: (
+  'sm-min': 'screen and (min-width: 576px)',
+  'sm-max': 'screen and (max-width: 575px)',
+  'md-min': 'screen and (min-width: 768px)',
+  'md-max': 'screen and (max-width: 767px)',
+  'lg-min': 'screen and (min-width: 992px)',
+  'lg-max': 'screen and (max-width: 991px)',
+  'xl-min': 'screen and (min-width: 1131px)',
+  'xl-max': 'screen and (max-width: 1130px)',
+);

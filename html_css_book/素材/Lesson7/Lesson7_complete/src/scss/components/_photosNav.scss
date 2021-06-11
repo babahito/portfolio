@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.photosNav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: $bgColor;
+  color: $textColor;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.photosNav__list {
+  display: flex;
+  padding: 10px 0;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  @include mq() {
+    justify-content: center;
+    padding: 20px 0;
+  }
+}
+
+.photosNav__item {
+  list-style-type: none;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.photosNav__button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 700;
+  opacity: .5;
+  transition: .2s;
+  letter-spacing: .1em;
+  &.is-active,
+  &:hover{
+    opacity: 1;
+  }
+}

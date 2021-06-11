@@ -1,0 +1,1088 @@
+/* ==========================================================================
+    Foundation
+========================================================================== */
+
+@import "mixin";
+@import "animation";
+@import "breakpoint";
+@import "font";
+@import "function";
+@import "reset";
+
+/* ==========================================================================
+    Layout
+========================================================================== */
+.l_container {
+  position: relative;
+  @include touch {
+    padding-top: 70px;
+  }
+  @include desktop {
+    padding-top: 100px;
+  }
+}
+
+.l_header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s linear;
+  @include touch {
+    height: 70px;
+  }
+  @include desktop {
+    display: flex;
+    height: 100px;
+    padding: 0 32px 0 40px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+  }
+  a {
+    text-decoration: none;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+    background-color: #fff;
+    @include desktop {
+      height: 100px;
+      padding: 0;
+    }
+  }
+  &__logo {
+    width: 160px;
+    height: auto;
+    @include ov;
+    @include desktop {
+      width: 240px;
+    }
+    svg {
+      width: 160px;
+      height: 40px;
+      @include desktop {
+        width: 240px;
+        height: 60px;
+      }
+    }
+  }
+  &__path {
+    width: 100%;
+    height: auto;
+    fill: #3e2b00;
+    .l_header._open & {
+      fill: #fff;
+    }
+  }
+  .l_gnav {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    @include desktop {
+      opacity: 1;
+    }
+  }
+  //ハンバーガー ここから
+  .header-btn {
+    width: 32px;
+    height: 20px;
+    padding-right: 5px;
+    background: none;
+    display: block;
+    z-index: 500;
+    @include desktop {
+      display: none;
+    }
+    span {
+      position: relative;
+      display: block;
+      height: 2px;
+      background: #000;
+      transition: all 0.3s;
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s;
+      }
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -10px;
+      }
+    }
+  }
+  @at-root body.is-openMenu {
+    .l_header__path {
+      fill: #fff;
+    }
+    .header-btn {
+      span {
+        background: transparent;
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+          background-color: #fff;
+        }
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+          background-color: #fff;
+        }
+      }
+    }
+    .header-gnav {
+      right: 0;
+    }
+  }
+  //ハンバーガー ここまで
+  @at-root body.is-openMenu {
+    @include touch {
+      position: fixed;
+      background-color: #a18f67;
+      pointer-events: auto;
+    }
+    .l_header__inner {
+      background-color: transparent;
+    }
+    .l_header__logo {
+      @include touch {
+        color: #fff;
+      }
+    }
+    .l_gnav {
+      pointer-events: auto;
+      opacity: 1;
+      height: calc(100vh - 70px);
+      background-color: #a18f67;
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+}
+.l_gnav {
+  align-items: center;
+  justify-content: center;
+  @include touch {
+    padding-top: 40px;
+  }
+  @include desktop {
+    flex: auto;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    @include desktop {
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 100px;
+    }
+  }
+  &__item {
+    @include fz(18);
+    @include font-webfont_Lato;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    @include desktop {
+      @include fz(15);
+    }
+    & + & {
+      @include touch {
+        margin-top: 26px;
+      }
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 0 20px;
+      color: #fff;
+      text-align: center;
+      @include desktop {
+        color: #9b875a;
+      }
+    }
+    &._cart {
+      margin-left: 16px;
+      overflow: hidden;
+      border: 2px solid #fff;
+      border-radius: 24px;
+      @include desktop {
+        border-color: #9b875a;
+        border-radius: 20px;
+      }
+      a {
+        width: 250px;
+        padding: 0;
+        line-height: 48px;
+        transition: background-color 0.2s ease-in-out;
+        text-transform: uppercase;
+        @include desktop {
+          width: 136px;
+          line-height: 36px;
+        }
+        &:hover {
+          color: #fff;
+          background-color: #9b875a;
+          transition: background-color 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+.l_breadcrumb {
+  padding: 16px 20px 22px;
+  background-color: #e2ded4;
+  @include desktop {
+    padding: 16px 40px 22px;
+  }
+  &__list {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  &__item {
+    @include fz(12);
+    @include font-webfont_Lato;
+    margin-top: 6px;
+    & + & {
+      &::before {
+        margin: 0 0.5em;
+        content: "/";
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    strong {
+      line-height: 1;
+    }
+  }
+}
+
+.l_main {
+  width: 100%;
+  min-height: 500px;
+  padding-top: 0;
+  padding-bottom: 40px;
+  background-color: #ebe9e4;
+  @include desktop {
+    padding-top: 20px;
+    padding-bottom: 85px;
+  }
+}
+.l_footer {
+  position: relative;
+  background-color: $color_primary;
+  &__copy {
+    @include fz(10);
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+    color: #fff;
+    @include desktop {
+      align-items: flex-end;
+      margin-top: inherit;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    padding: 24px 30px 20px;
+    margin: 0 auto;
+    @include desktop {
+      flex-direction: row;
+      max-width: 1280px;
+      padding: 30px 50px;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+    &Body {
+      display: flex;
+      flex-direction: row;
+      & + & {
+        margin-top: 30px;
+        @include desktop {
+          margin-top: inherit;
+          margin-left: 50px;
+        }
+      }
+    }
+    &Name {
+      color: #958154;
+      @include fz(12);
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-top: 6px;
+      @include mobile {
+        width: 7em;
+      }
+    }
+    &List {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-left: 10px;
+      flex-wrap: wrap;
+      @include desktop {
+        flex-direction: column;
+        margin-left: 28px;
+      }
+    }
+    &Item {
+      position: relative;
+      @include fz(12);
+      margin-top: 6px;
+      text-transform: uppercase;
+      & + & {
+        @include desktop {
+          margin-top: 6px;
+        }
+        &::before {
+          @include touch {
+            display: inline;
+            color: #fff;
+            content: "｜";
+          }
+        }
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        @include desktop {
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+    Component
+========================================================================== */
+
+.c_cards {
+  display: flex;
+  flex-wrap: wrap;
+  @include touch {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  @include desktop {
+    max-width: 1000px;
+    margin-top: inherit;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__item {
+    @include touch {
+      width: 32%;
+      margin-top: 2%;
+      margin-left: 2%;
+    }
+    @include desktop {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  }
+  &__item:nth-child(-n + 3) {
+    margin-top: 0;
+  }
+  &__item:nth-child(3n + 1) {
+    margin-left: 0;
+    @include desktop {
+      margin-left: 0;
+    }
+  }
+}
+
+.c_cart {
+  padding-top: 25px;
+  &__inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &__item {
+    background: #fff;
+    & + & {
+      margin-top: 6px;
+    }
+    &Link {
+      display: flex;
+      padding: 20px;
+      text-decoration: none;
+    }
+    &Thumb {
+      width: 90px;
+      height: 90px;
+      overflow: hidden;
+      img {
+        @include object-fit;
+        width: auto;
+        max-width: inherit;
+        height: 100%;
+      }
+    }
+    &Body {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 20px;
+    }
+    &Title {
+      margin-top: -4px;
+    }
+    &Price {
+      @include fz(18);
+      font-weight: bold;
+      text-align: right;
+    }
+  }
+  &__price {
+    margin: 20px 20px 0;
+    @include desktop {
+      margin: 30px 0 0;
+    }
+    &Item {
+      font-weight: bold;
+      line-height: 1;
+      text-align: right;
+      @include fz(30);
+      & + & {
+        margin-top: 16px;
+        @include desktop {
+          margin-top: 20px;
+        }
+      }
+    }
+    &Text {
+      @include fz(16);
+      margin-right: 10px;
+      font-weight: normal;
+    }
+  }
+}
+.c_detail {
+  @include touch {
+    background: #fff;
+  }
+  &__inner {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+      padding-bottom: 80px;
+    }
+  }
+  &__main {
+    position: relative;
+    width: 100%;
+    height: auto;
+    @include desktop {
+      max-width: 600px;
+      height: 700px;
+      margin-top: -20px;
+    }
+    .swiper-container {
+      .swiper-slide {
+        @include desktop {
+          height: 700px;
+        }
+        img {
+          @include object-fit;
+          max-width: inherit;
+          width: 100%;
+          height: auto;
+          @include desktop {
+            width: auto;
+            height: 700px;
+          }
+        }
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 50px;
+        height: 50px;
+        @include ov;
+        &::after {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 50px;
+          background-image: url(img/common/arrow.png);
+          background-size: 100% auto;
+        }
+      }
+      .swiper-button-prev {
+        transform: rotate(180deg);
+      }
+      .swiper-button-white {
+      }
+    }
+    .gallery-thumbs {
+      display: none;
+      @include desktop {
+        display: block;
+        position: absolute;
+        max-height: 100px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 550px;
+        z-index: 10;
+        bottom: 0;
+        left: calc(100% + 60px);
+      }
+      .swiper-slide {
+        width: 100px;
+        height: inherit;
+        margin-left: 10px;
+        &.swiper-slide-thumb-active {
+          &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $color_primary;
+            position: absolute;
+            pointer-events: none;
+            z-index: 5;
+          }
+        }
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+    }
+  }
+  &__contents {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin: 0 20px;
+    @include desktop {
+      padding-bottom: 70px;
+      padding-left: 5%;
+      margin: 0 30px;
+    }
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+      width: 100%;
+    }
+    @include desktop {
+      margin-top: 30px;
+    }
+    &Sub {
+      @include fz(14);
+      margin-top: 10px;
+      color: #9b875a;
+      @include desktop {
+        @include fz(18);
+        margin-top: inherit;
+        order: 1;
+      }
+    }
+    &Title {
+      font-weight: bold;
+      margin-top: 30px;
+      @include fz(20);
+      line-height: 1.3;
+      @include desktop {
+        @include fz(36);
+        order: 2;
+        margin-top: 10px;
+      }
+    }
+    &Price {
+      margin-top: 30px;
+      font-weight: bold;
+      @include fz(20);
+      text-align: right;
+      @include desktop {
+        text-align: inherit;
+        @include fz(32);
+        margin-top: 50px;
+        order: 3;
+      }
+    }
+  }
+  &__lead {
+    @include fz(16);
+    line-height: (28 / 16);
+    margin-top: 20px;
+    @include mobile {
+      @include fz(12);
+    }
+    @include desktop {
+      margin: 60px 0 30px;
+      order: 5;
+    }
+  }
+  &__btn {
+    margin-top: 24px;
+    max-width: 314px;
+    @include desktop {
+      order: 4;
+    }
+    .e_btn {
+      width: 100%;
+    }
+  }
+}
+
+.c_form {
+  margin: 12px 15px 0;
+  @include desktop {
+    width: 400px;
+    margin: 60px auto 0;
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    & + & {
+      margin-top: 34px;
+    }
+  }
+  &__label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="password"] {
+    padding: 12px 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    &::placeholder {
+      color: #666;
+    }
+  }
+  .e_btnWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    &__note {
+      margin-top: 20px;
+      @include fz(12);
+    }
+  }
+}
+.c_kv {
+  position: relative;
+  overflow: hidden;
+  background-color: #ded6c5;
+  @include desktop {
+    height: 360px;
+  }
+  &__inner {
+    z-index: 10;
+    width: 100%;
+    overflow: visible;
+    @include desktop {
+      max-width: 1024px;
+      height: 360px;
+      margin: 0 auto;
+    }
+  }
+  .swiper-slide {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: inherit;
+    margin: 0;
+    @include desktop {
+      min-width: inherit;
+    }
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      height: calc(100vh - 70px);
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__excerpt {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    line-height: 2;
+    line-height: 1.6;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.05em;
+    @include fz(16);
+    @include desktop {
+      top: 63%;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-pagination {
+    bottom: 18px;
+  }
+  .swiper-button-white {
+    width: 50px;
+    height: 50px;
+    background: #000;
+  }
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    &.swiper-pagination-bullet-active {
+      background-color: #9b875a;
+    }
+  }
+}
+.c_memberLogin {
+  padding-top: 40px;
+  @include desktop {
+    padding-top: 80px;
+  }
+}
+.c_point {
+  @include desktop {
+    background-color: #fff;
+  }
+  &__inner {
+    @include desktop {
+      max-width: 1000px;
+      padding-top: 45px;
+      padding-bottom: 50px;
+      margin: 0 auto;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    background: #ebe9e4;
+    @include desktop {
+      padding: 36px 25px;
+      margin-top: 40px;
+      flex-direction: row;
+    }
+  }
+  &__item {
+    padding: 20px 20px;
+    @include touch {
+      background-color: #fff;
+    }
+    @include desktop {
+      width: (100% / 3);
+      padding: 0 20px 58px;
+    }
+    & + & {
+      border-top: 2px solid #ebe9e4;
+      @include desktop {
+        border-top: none;
+        border-left: 2px solid $color_primary;
+      }
+    }
+    &Title {
+      @include fz(16);
+      font-weight: bold;
+      line-height: (26 / 18);
+      @include desktop {
+        @include fz(24);
+        line-height: (36 / 24);
+      }
+    }
+    &Text {
+      margin-top: 10px;
+      @include fz(16);
+      line-height: (24 / 16);
+      @include mobile {
+        @include fz(12);
+      }
+    }
+  }
+}
+.c_recommend {
+  background-color: #ebe9e4;
+  @include desktop {
+    padding-top: 80px;
+  }
+}
+.c_section {
+  &__header {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 28px;
+    @include desktop {
+      padding-bottom: 38px;
+      margin-bottom: 50px;
+    }
+    &::before {
+      @include desktop {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        width: 60px;
+        height: 2px;
+        content: "";
+        background-color: #9b875a;
+        transform: translateX(-50%);
+      }
+    }
+    &Title {
+      text-transform: uppercase;
+      @include fz(16);
+      @include font-webfont_Lato;
+      text-align: center;
+      @include desktop {
+        @include fz(30);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+    Element
+========================================================================== */
+
+a,
+button,
+input {
+  .e_btn &,
+  &.e_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 52px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    transition: 0.3s ease-in-out;
+    border-radius: 24px;
+    @include fz(16);
+    @include desktop {
+      padding: 0 70px;
+    }
+    & + & {
+      margin-left: 10px;
+    }
+  }
+}
+
+.e_btn {
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+/* stylelint-disable */
+//色
+a,
+button,
+input {
+  .e_btn &,
+  &.e_btn {
+    &._white {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+      &:hover {
+        color: #fff;
+        background: #000;
+      }
+    }
+    &._brown {
+      background-color: $color_primary;
+      color: #fff;
+      border: 2px solid $color_primary;
+      &:hover {
+        color: $color_primary;
+        background: #fff;
+      }
+    }
+  }
+}
+
+//横幅
+.e_btn {
+  &._w235 {
+    width: 235px;
+    a,
+    button,
+    input {
+      width: 100%;
+    }
+  }
+  &._w460 {
+    width: 100%;
+    @include desktop {
+      width: 460px;
+    }
+    a,
+    button,
+    input {
+      width: 100%;
+    }
+  }
+}
+
+//縦幅
+.e_btn {
+  &._h45 {
+    a,
+    button,
+    input {
+      height: 45px;
+      border-radius: 45px;
+      @include desktop {
+        letter-spacing: 0.18em;
+      }
+    }
+  }
+}
+
+//囲み 右寄せ 中央寄せ 左寄せ
+.e_btnWrap {
+  display: flex;
+  &._left {
+    justify-content: flex-start;
+  }
+  &._center {
+    justify-content: center;
+  }
+  &._right {
+    justify-content: flex-end;
+  }
+}
+
+/* stylelint-enable */
+.e_card {
+  display: block;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 3px;
+  @include desktop {
+    border-radius: 6px;
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include ov_zoomimg;
+    &:hover {
+      .e_card__title {
+        color: #9b875a;
+      }
+    }
+  }
+  &__thumb {
+    height: 33.3vw;
+    overflow: hidden;
+    display: block;
+    @include desktop {
+      height: 180px;
+    }
+    img {
+      width: auto;
+      height: 100%;
+      @include object-fit;
+      @include desktop {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80px;
+    padding: 6px 10px 14px;
+    @include desktop {
+      padding: 10px 16px 14px;
+    }
+  }
+  &__title {
+    @include fz(12);
+    transition: color 0.2s;
+    @include desktop {
+      @include fz(16);
+    }
+  }
+  &__price {
+    line-height: 1;
+    color: #9b875a;
+    text-align: right;
+    @include fz(14);
+    @include desktop {
+      @include fz(16);
+    }
+  }
+}
+.e_input {
+  width: 100%;
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 0;
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+}
+.e_textarea {
+  textarea {
+    width: 100%;
+    min-height: 80px;
+  }
+}

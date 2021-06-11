@@ -1,0 +1,104 @@
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+.heading-lv1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.heading-lv1 .heading-icon {
+  color: #efdd34;
+  font-size: 30px;
+  margin-right: 8px;
+}
+
+.heading-lv1 .heading-sub {
+  margin-left: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .heading-lv1 {
+    margin-top: 96px;
+  }
+}
+
+.btn-more {
+  font-size: 18px;
+  font-weight: bold;
+  color: #459209;
+  text-align: center;
+  display: block;
+  position: relative;
+  max-width: 400px;
+  width: 80%;
+  margin: 32px auto 48px;
+  padding: 4px 0;
+  background: #FFFFFF;
+  border: 3px solid #459209;
+  border-radius: 99em;
+  transition: all .3s;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-more {
+    width: 250px;
+  }
+}
+
+.btn-more span {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  margin-top: -15px;
+  font-size: 30px;
+}
+
+.btn-more:hover {
+  color: #efdd34;
+  border-color: #efdd34;
+}
+
+.main {
+  margin-top: 67px;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    margin-top: 0;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 4px 0;
+  margin-top: 64px;
+  background-color: #faf5e9;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    margin-top: 96px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

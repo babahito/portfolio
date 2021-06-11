@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../../ポートフォリオ/html_css_book/html_lesson04"
+			// "path":"."
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "/htdocs",
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "expanded",
+				"extensionName": ".css",
+				"savePath": "/htdocs/css"
+			}
+		]
+	}
+}

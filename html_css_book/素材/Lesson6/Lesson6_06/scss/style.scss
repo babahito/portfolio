@@ -1,0 +1,363 @@
+// variables
+//--------------------
+$breakpoints: (
+  'sm-min': 'screen and (min-width: 576px)',
+  'sm-max': 'screen and (max-width: 575px)',
+  'md-min': 'screen and (min-width: 768px)',
+  'md-max': 'screen and (max-width: 767px)',
+  'lg-min': 'screen and (min-width: 992px)',
+  'lg-max': 'screen and (max-width: 991px)',
+  'xl-min': 'screen and (min-width: 1131px)',
+  'xl-max': 'screen and (max-width: 1130px)',
+);
+@mixin mq($breakpoint: md-min) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+$c_black : #333;
+$c_green : #459209;
+$c_yellow : #efdd34;
+$c_beige : #efe1c5;
+$m-width : 1200px;
+
+// common
+//--------------------
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: $c_black;
+}
+a {
+  color: $c_black;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+ul {
+  list-style: none;
+}
+.heading-lv1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  .heading-icon {
+    color: $c_yellow;
+    font-size: 30px;
+    margin-right: 8px;
+  }
+  .heading-sub {
+    margin-left: 16px;
+  }
+  @include mq(md-min) {
+    margin-top: 96px;
+  }
+}
+.btn-more {
+  font-size: 18px;
+  font-weight: bold;
+  color: $c_green;
+  text-align: center;
+  display: block;
+  position: relative;
+  max-width: 400px;
+  width: 80%;
+  margin: 32px auto 48px;
+  padding: 4px 0;
+  background: #FFFFFF;
+  border: 3px solid $c_green;
+  border-radius: 99em;
+  transition: all .3s;
+  @include mq(md-min) {
+    width: 250px;
+  }
+  span {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    margin-top: -15px;
+    font-size: 30px;
+  }
+  &:hover {
+    color: $c_yellow;
+    border-color: $c_yellow;
+  }
+}
+
+//header
+//--------------------
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 12px 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  max-width: $m-width;
+  width: 100%;
+  background-color: #fff;
+  @include mq(md-min) {
+    position: static;
+    flex-direction: column;
+  }
+  @include mq(lg-min) {
+    flex-direction: row;
+  }
+}
+.header-logo {
+  line-height: 1;
+  @include mq(sm-max) {
+    width: 250px;
+  }
+}
+.header-btn {
+  width: 32px;
+  height: 20px;
+  padding-right: 5px;
+  background: none;
+  display: block;
+  z-index: 500;
+  span {
+    position: relative;
+    display: block;
+    height: 2px;
+    background: $c_black;
+    transition: all .3s;
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: $c_black;
+      transition: all .3s;
+    }
+    &::before {
+      top: -10px;
+    }
+    &::after {
+      bottom: -10px;
+    }
+  }
+  @include mq(md-min) {
+    display: none;
+  }
+}
+.header-gnav {
+  margin-top: 62px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: all .5s;
+  background-color: #fff;
+  @include mq(md-min) {
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    position: static;
+  }
+}
+.header-gnav-list {
+  border-top: 1px solid $c_beige;
+  a {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    padding: 8px 24px;
+    font-size: 18px;
+    border-bottom: 1px solid $c_beige;
+    span {
+      font-size: 22px;
+      color: $c_green;
+      margin-right: 8px;
+      &.header-gnav-access {
+        font-size: 24px;
+      }
+    }
+  }
+  @include mq(md-min) {
+    display: flex;
+    border: none;
+    a {
+      border: none;
+      margin-left: 16px;
+      padding: 5px;
+    }
+  }
+}
+
+// open
+//--------------------
+.is-openMenu {
+  .header-btn {
+    span {
+      background: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .header-gnav {
+    right: 0;
+  }
+}
+
+//main
+//--------------------
+.main {
+  margin-top: 67px;
+  @include mq(md-min) {
+    margin-top: 0;
+  }
+}
+
+//footer
+//--------------------
+.footer {
+  text-align: center;
+  padding: 4px 0;
+  margin-top: 64px;
+  background-color: #faf5e9;
+  @include mq(md-min) {
+    margin-top: 96px;
+  }
+}
+
+//slider common
+//--------------------
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: -5px;
+  .swiper-pagination-bullet {
+    margin: 0 8px;
+    @include mq(md-min) {
+      margin: 0 12px;
+    }
+  }
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.swiper-pagination-bullet-active {
+  background-color: $c_green;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: $c_green;
+  overflow: hidden;
+  &:after {
+    font-family: 'Material Icons';
+    font-size: 60px;
+  }
+}
+.swiper-button-next {
+  &:after {
+    content: "navigate_next";
+  }
+}
+.swiper-button-prev {
+  &:after {
+    content: "navigate_next";
+    transform: scale(-1, 1);
+  }
+}
+
+//main visual
+//--------------------
+.swiper-slider_01 {
+  text-align: center;
+  padding-bottom: 28px;
+  margin-bottom: -28px;
+  img {
+    @include mq(sm-min) {
+      object-fit: cover;
+      height: 540px;
+      width: 100%;
+    }
+  }
+  .swiper-button-next, .swiper-button-prev {
+    top: calc( 50% - 16px);
+  }
+  @include mq(md-min) {
+    padding-bottom: 32px;
+    margin-bottom: -32px;
+  }
+}
+
+//events
+//--------------------
+.events-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: $m-width;
+  margin:0 16px -16px;
+  @include mq(md-min) {
+    margin: 0 auto -16px;
+    padding: 0 16px;
+  }
+  li {
+    margin: 16px auto;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    @include mq(md-min) {
+      width: calc( 33% - 16px );
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+  .events-info {
+    padding: 8px 16px 16px;
+  }
+  .events-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+}
+
+//news
+//--------------------
+.news-list {
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 0 16px;
+  li {
+    border-top: 1px dashed $c_beige;
+    &:last-of-type {
+      border-bottom: 1px dashed $c_beige;
+    }
+  }
+  a {
+    display: flex;
+    padding: 8px 0;
+  }
+  time {
+    flex: 0 0 auto;
+  }
+  p {
+    font-size: 16px;
+    margin-left: 24px;
+    line-height: 1.4;
+    @include mq(md-min) {
+      margin-left: 48px;
+    }
+  }
+}

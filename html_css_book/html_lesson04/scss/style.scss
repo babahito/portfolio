@@ -1,0 +1,28 @@
+// variable
+$orenge:#D39E27;
+$l_orenge:#FCF7ED;
+$gray:#333333;
+$foot_gray:#505050;
+$copy:#020202;
+
+// common
+
+
+// parts
+// ヘッダー
+.header{
+    width:100%;
+    top:0;
+    left:0;
+    background-color: #FFF;
+    height:60px;
+    position:fixed;
+    &__inner{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+}
+.gnav{
+    display:none;
+}
